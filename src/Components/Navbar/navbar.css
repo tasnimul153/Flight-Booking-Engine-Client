@@ -1,0 +1,171 @@
+:root {
+  --primary-color: hsl(199, 100%, 33%);
+  --secondary-color: hsl(187, 85%, 43%);
+  --gradient-color: linear-gradient(to right, #002677, #0066aa);
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(201, 33%, 16%);
+  --text-color: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --bodyColor: rgb(240, 240, 240);
+  --inputColor: rgb(239, 239, 239);
+  --cardBG: rgb(225, 225, 225);
+}
+
+.navBarSection {
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+  transition: 0.5s ease-in-out;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--whiteColorDeam);
+  background: transparent;
+  width: 80%;
+  margin: auto;
+  padding: 1rem;
+  height: 4rem;
+}
+header .navBar {
+  width: 28rem;
+}
+header .navBar .navLists {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+header .navBar .navLists .navItem {
+  padding: 0 1rem;
+}
+header .navBar .navLists .navItem .navLink {
+  color: rgb(219, 219, 219);
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+header .navBar .navLists .navItem .navLink:hover {
+  border-bottom: 2px solid wheat;
+  color: wheat;
+}
+header .navBar .navLists .navItem .navLinkOthers {
+  color: rgba(43, 43, 43, 0.747);
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+header .navBar .navLists .navItem .navLinkOthers:hover {
+  font-weight: 600;
+  border-bottom: 2px solid rgba(0, 102, 170, 0.4745098039);
+  color: #0066aa;
+}
+header .logoHomePage {
+  color: rgb(219, 219, 219);
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+header .logoHomePage .icon {
+  font-size: 25px;
+  color: rgb(219, 219, 219);
+  transform: translateY(5px);
+}
+header .logoOtherPage {
+  color: #0066aa;
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+header .logoOtherPage .icon {
+  font-size: 25px;
+  color: #0066aa;
+  transform: translateY(5px);
+}
+header .toggleNavBar {
+  display: none;
+}
+header .toggleNavBar .icon {
+  font-size: 25px;
+  color: var(--primary-color);
+}
+header .toggleNavBar:hover.icon {
+  color: var(--secondary-color);
+}
+header .signupButtonHomePage {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  color: goldenrod;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+}
+header .signupButtonHomePage:hover {
+  background: goldenrod;
+  color: black;
+}
+header .signupButtonOtherPage {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  color: #0066aa;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+}
+header .signupButtonOtherPage:hover {
+  background: #0066aa;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  header .toggleNavBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header .navBar {
+    position: absolute;
+    background: var(--whiteColorDeam);
+    height: -moz-max-content;
+    height: max-content;
+    width: 100%;
+    top: -15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -5;
+    transition: 0.5s ease-in-out;
+  }
+  header .navBar .navLists {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    padding: 0.5rem 0;
+  }
+  header .navBar .navLists .navItem {
+    padding: 0.5rem 0;
+  }
+  header .navBar .navLists .navItem .navLink {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  header .navBar .navLists .navItem .navLink:hover {
+    color: var(--primary-color);
+  }
+  header .activeNavBar {
+    top: 4rem;
+  }
+}/*# sourceMappingURL=navbar.css.map */
