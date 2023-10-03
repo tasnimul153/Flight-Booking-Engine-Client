@@ -89,32 +89,93 @@ export const useSearchInputs = () => {
         handleRadioChange('oneway');
     }, []);
 
+    const formatDate = (date) => {
+        const d = new Date(date);
+        let month = "" + (d.getMonth() + 1);
+        let day = "" + d.getDate();
+        const year = d.getFullYear();
+
+        if (month.length < 2) month = "0" + month;
+        if (day.length < 2) day = "0" + day;
+
+        return [year, month, day].join("-");
+    };
+
+    const fromCountry = fromData.country;
+    const fromCity = fromData.city;
+    const fromAirport = fromData.airport;
+    const fromAirportCode = fromData.airportCode;
+
+    const toCountry = toData.country;
+    const toCity = toData.city;
+    const toAirport = toData.airport;
+    const toAirportCode = toData.airportCode;
+
+    const departureDateExact = departureDate.date;
+    const returnDateExact = returnDate.date;
+    const departureDay = departureDate.day;
+    const returnDay = returnDate.day;
+
+    const passengerCount = passengerAndClass.passenger_count;
+    const classType = passengerAndClass.class_type;
+
     // Search Button
     const searchClicked = () => {
+        
         const queryParams = [
-            `fromData=${fromData.airportCode}`,
-            `toData=${toData.airportCode}`,
-            `departureDate=${departureDate.date}`,
-            `returnDate=${returnDate.date}`,
+            `fromCountry=${fromCountry}`,
+            `fromCity=${fromData.city}`,
+            `fromAirport=${fromData.airport}`,
+            `fromAirportCode=${fromData.airportCode}`,
+            
+            `toCountry=${toData.country}`,
+            `toCity=${toData.city}`,
+            `toAirport=${toData.airport}`,
+            `toAirportCode=${toData.airportCode}`,
+
+            `departureDateExact=${departureDateExact}`,
+            `departureDay=${departureDay}`,
+            `returnDateExact=${returnDateExact}`,
+            `returnDay=${returnDay}`,
+
             `passengerCount=${passengerAndClass.passenger_count}`,
             `classType=${passengerAndClass.class_type}`,
+
             `tripType=${radioValue}`
         ].join('&');
 
         navigate(`/search?${queryParams}`);
     };
     return {
+        fromData,
+        toData,
+        departureDate,
+        returnDate,
+        passengerAndClass,
+        radioValue,
+        getCurrentDate,
         handleSelect,
         handleDateSelect,
         handlePassengerAndClassSelect,
         onSwap,
         searchClicked, 
         handleRadioChange,
-        fromData,
-        toData,
-        departureDate,
+        fromCountry,
+        fromCity,
+        fromAirport,
+        fromAirportCode,
+        toCountry,
+        toCity,
+        toAirport,
+        toAirportCode,
+        departureDateExact,
+        returnDateExact,
+        departureDay,
+        returnDay,
         returnDate,
-        passengerAndClass,
-        radioValue
+        passengerCount,
+        classType,
+        radioValue, 
+        formatDate
     };
 };

@@ -22,7 +22,6 @@ const NearestAirports = (AccessToken) => {
                             },
                         }
                     );
-                    console.log(response.data.data);
                     setNearestAirport(response.data.data);
                 }
             } catch (error) {

@@ -6,14 +6,214 @@
   font-family: "Roboto", sans-serif;
 }
 .Container .search-box-container {
-  height: 60px;
+  height: 78px;
   width: 100vw;
   position: relative;
   top: 64px;
   background-color: #ffffff;
-  border-top: 1px solid rgba(71, 71, 71, 0.411);
-  border-bottom: 1px solid rgba(71, 71, 71, 0.411);
+  border-top: 1px solid rgba(71, 71, 71, 0.233);
+  border-bottom: 1px solid rgba(71, 71, 71, 0.233);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.Container .search-box-container #swapIcon {
+  padding: 5px;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  position: relative;
+  right: 595px;
+  top: -30px;
+  background-color: var(--white-color);
+  border: 1px solid rgba(71, 71, 71, 0.233);
+  z-index: 101;
+  color: rgb(0, 34, 187);
+  transition: all 0.4s ease-in-out;
+}
+.Container .search-box-container #swapIcon:hover {
+  transform: scale(1.1);
+  transform: rotate(180deg);
+}
+.Container .search-box-container .search-inputs {
+  width: 100vw;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* Customizing the header */
+  /* Customizing the current date */
+  /* Customizing the today highlight 
+  .react-datepicker__day--today {
+      border: none;
+      border-radius: 50px;
+      background-color: #ffd28e;
+  }*/
+  /* Customizing the days of the week */
+  /* Customizing Month and year title */
+  /* Customizing the days of the month */
+  /* Customizing hover state */
+  /* Customizing the arrows */
+}
+.Container .search-box-container .search-inputs .locLast,
+.Container .search-box-container .search-inputs .lastPass,
+.Container .search-box-container .search-inputs .dateLast {
+  border-left: 1px solid rgba(71, 71, 71, 0.233);
+}
+.Container .search-box-container .search-inputs .dropdownListSearch {
+  position: absolute;
+  top: 90px;
+  width: 350px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 200px;
+  border-radius: 5px;
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .dropdownListSearch::-webkit-scrollbar {
+  width: 5px;
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .dropdownListSearch::-webkit-scrollbar-track {
+  background: transparent;
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .dropdownListSearch::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .searchBox {
+  position: sticky;
+  top: 0;
+  height: 35px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: white;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.267);
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .searchBox #searchIcon {
+  height: 24px;
+  width: 24px;
+  margin: 0px 10px;
+  color: var(--primary-color);
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .searchBox input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 2px 0px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgb(36, 36, 36);
+  letter-spacing: 1px;
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .searchBox input:focus {
+  outline: none;
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .dropdownItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .dropdownItem:hover {
+  background-color: rgb(243, 243, 243);
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .MetaLocation {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 88%;
+  overflow-x: hidden;
+}
+.Container .search-box-container .search-inputs .dropdownListSearch .MetaLocation .airport-name {
+  font-size: 0.65rem;
+}
+.Container .search-box-container .search-inputs .dataBox {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  width: 290px;
+  height: 100%;
+  padding: 5px 25px;
+  cursor: pointer;
+}
+.Container .search-box-container .search-inputs .dataBox .constant-tag {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(75, 75, 75, 0.637);
+  position: relative;
+}
+.Container .search-box-container .search-inputs .dataBox .constant-tag #dropdownArrow {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: -2px;
+  color: var(--greyText);
+}
+.Container .search-box-container .search-inputs .dataBox .Middle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 25px;
+  color: rgba(0, 56, 177, 0.863);
+}
+.Container .search-box-container .search-inputs .dataBox .Last {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: -40px;
+  color: rgb(80, 80, 80);
+}
+.Container .search-box-container .search-inputs .dataBox .airport-code {
+  color: rgb(0, 34, 187);
+}
+.Container .search-box-container .search-inputs .react-datepicker__header {
+  background-color: rgb(0, 91, 228);
+  color: white;
+}
+.Container .search-box-container .search-inputs .react-datepicker__day--selected {
+  background-color: #34bd68;
+}
+.Container .search-box-container .search-inputs .react-datepicker__day-name {
+  color: rgba(231, 231, 231, 0.862745098);
+}
+.Container .search-box-container .search-inputs .react-datepicker__current-month,
+.Container .search-box-container .search-inputs .react-datepicker__current-year {
+  color: #e7e7e7;
+}
+.Container .search-box-container .search-inputs .react-datepicker__month-dropdown,
+.Container .search-box-container .search-inputs .react-datepicker__year-dropdown {
+  background-color: #333;
+  color: white;
+}
+.Container .search-box-container .search-inputs .react-datepicker__day:hover {
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+.Container .search-box-container .search-inputs .react-datepicker__navigation--previous,
+.Container .search-box-container .search-inputs .react-datepicker__navigation--next {
+  top: 12px;
+  border-color: white;
+}
+.Container .search-box-container .search-inputs .calendar {
+  border: 1px solid rgb(209, 209, 209);
+  padding: 3px 5px;
+  border-radius: 5px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  position: relative;
+  top: -40px;
+  left: 25px;
+}
+.Container .search-box-container .search-inputs .calendar :focus {
+  outline: none;
 }
 .Container .searched-flights-container {
   width: 100vw;
@@ -45,29 +245,35 @@
   height: 300px;
   background-color: #ffffff;
   border-radius: 10px;
-  border-bottom: 1px solid rgba(71, 71, 71, 0.411);
+  border-bottom: 1px solid rgba(71, 71, 71, 0.233);
 }
 .Container .searched-flights-container .flights .flight .carrier-info {
   width: 100%;
-  height: 60px;
+  height: 70px;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid rgba(71, 71, 71, 0.185);
 }
 .Container .searched-flights-container .flights .flight .carrier-info .each-carrier {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   padding: 20px;
+  row-gap: 0px;
+}
+.Container .searched-flights-container .flights .flight .carrier-info .each-carrier .carrier-company {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 8px;
 }
-.Container .searched-flights-container .flights .flight .carrier-info .each-carrier .carrier-name {
+.Container .searched-flights-container .flights .flight .carrier-info .each-carrier .carrier-company .carrier-name {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: #272727;
 }
-.Container .searched-flights-container .flights .flight .carrier-info .each-carrier .carrier-logo {
+.Container .searched-flights-container .flights .flight .carrier-info .each-carrier .carrier-company .carrier-logo {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -78,9 +284,36 @@
   overflow: hidden;
   /* Hide anything that goes outside the circle */
 }
-.Container .searched-flights-container .flights .flight .carrier-info .each-carrier .carrier-logo img {
+.Container .searched-flights-container .flights .flight .carrier-info .each-carrier .carrier-company .carrier-logo img {
   width: 30px;
   height: 30px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.Container .searched-flights-container .flights .flight .carrier-info .each-carrier .carrier-model {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin-left: 33px;
+  margin-top: -8px;
+  color: rgba(61, 61, 61, 0.729);
+  padding: 2px 5px;
+  border-radius: 50px;
+}
+
+.passengerAndClassDropdown {
+  position: absolute;
+  width: 400px;
+  height: -moz-max-content;
+  height: max-content;
+  padding-bottom: 15px;
+  left: 0;
+  top: 90px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 200px;
+  border-radius: 15px;
 }/*# sourceMappingURL=searchPage.css.map */

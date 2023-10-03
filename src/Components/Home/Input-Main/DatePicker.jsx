@@ -27,6 +27,11 @@ const DatePicker = ({ tag, date, day, active, onSelect }) => {
     event.stopPropagation();
   };
 
+  useEffect(() => {
+    setSelectedDate(new Date(date));
+  }, [date]);
+  
+
   const handleDateChange = (date) => {
     setSelectedDate(date);
     const formattedDate = date.toLocaleDateString('en-US', {

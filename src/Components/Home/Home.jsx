@@ -24,8 +24,10 @@ const Home = () => {
         handleDateSelect, 
         handlePassengerAndClassSelect, 
         onSwap, 
-        searchClicked 
+        searchClicked, 
     } = useSearchInputs();
+
+    
     
     return (
         <>

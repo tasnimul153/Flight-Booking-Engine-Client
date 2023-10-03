@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&family=Open+Sans:wght@300;400;500&family=Poppins:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+$carrier-model-color: rgba(61, 61, 61, 0.729);
+$search-box-border-color: rgba(71, 71, 71, 0.233);
 
 .Container {
     width: 100vw;
@@ -7,14 +9,246 @@
     font-family: 'Roboto', sans-serif;
 
     .search-box-container {
-        height: 60px;
+        height: 78px;
         width: 100vw;
         position: relative;
         top: 64px;
         background-color: #ffffff;
-        border-top: 1px solid rgba(71, 71, 71, 0.411);
-        border-bottom: 1px solid rgba(71, 71, 71, 0.411);
+        border-top: 1px solid $search-box-border-color;
+        border-bottom: 1px solid $search-box-border-color;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+
+        #swapIcon {
+            padding: 5px;
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+            position: relative;
+            right: 595px;
+            top: -30px;
+            background-color: var(--white-color);
+            border: 1px solid $search-box-border-color;
+            z-index: 101;
+            color: rgb(0, 34, 187);
+            transition: all 0.4s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+                transform: rotate(180deg);
+            }
+        }
+
+        .search-inputs {
+            width: 100vw;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            .locLast,
+            .lastPass,
+            .dateLast {
+                border-left: 1px solid $search-box-border-color;
+            }
+            .dropdownListSearch {
+                position: absolute;
+                top: 90px;
+                width: 350px;
+                background-color: rgba(255, 255, 255, 1);
+                box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4);
+                z-index: 10;
+                overflow-y: auto;
+                overflow-x: hidden;
+                max-height: 200px;
+                border-radius: 5px;
+
+                .dropdownListSearch::-webkit-scrollbar {
+                    width: 5px;
+                }
+
+                .dropdownListSearch::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+
+                .dropdownListSearch::-webkit-scrollbar-thumb {
+                    background-color: rgba(0, 0, 0, 0.3);
+                    border-radius: 5px;
+                }
+
+                .searchBox {
+                    position: sticky;
+                    top: 0;
+                    height: 35px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    border: none;
+                    border-top-right-radius: 5px;
+                    border-top-left-radius: 5px;
+                    background-color: white;
+                    border-bottom: 1px solid rgba(128, 128, 128, 0.267);
+
+                    #searchIcon {
+                        height: 24px;
+                        width: 24px;
+                        margin: 0px 10px;
+                        color: var(--primary-color);
+                    }
+
+                    input {
+                        height: 100%;
+                        width: 100%;
+                        border: none;
+                        padding: 2px 0px;
+                        font-size: 0.9rem;
+                        font-weight: 400;
+                        color: rgb(36, 36, 36);
+                        letter-spacing: 1px;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+
+                .dropdownItem {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 0.2rem 0.5rem;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgb(243, 243, 243);
+                    }
+                }
+
+                .MetaLocation {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    justify-content: center;
+                    width: 88%;
+                    overflow-x: hidden;
+
+                    .airport-name {
+                        font-size: 0.65rem;
+                    }
+                }
+            }
+            .dataBox {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: space-between;
+                width: 290px;
+                height: 100%;
+                padding: 5px 25px;
+
+                cursor: pointer;
+
+                .constant-tag {
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    color: rgba(75, 75, 75, 0.637);
+                    position: relative;
+
+                    #dropdownArrow {
+                        height: 20px;
+                        width: 20px;
+                        position: absolute;
+                        top: -2px;
+                        color: var(--greyText);
+                    }
+                }
+
+                .Middle {
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    margin-top: 25px;
+                    color: rgba(0, 56, 177, 0.863);
+                }
+
+                .Last {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-top: -40px;
+                    // white-space: nowrap;
+                    color: rgb(80, 80, 80);
+
+                }
+
+                .airport-code {
+                    color: rgb(0, 34, 187);
+                }
+            }
+
+            /* Customizing the header */
+            .react-datepicker__header {
+                background-color: rgb(0, 91, 228);
+                color: white;
+            }
+
+            /* Customizing the current date */
+            .react-datepicker__day--selected {
+                background-color: #34bd68;
+            }
+
+            /* Customizing the today highlight 
+            .react-datepicker__day--today {
+                border: none;
+                border-radius: 50px;
+                background-color: #ffd28e;
+            }*/
+
+            /* Customizing the days of the week */
+            .react-datepicker__day-name {
+                color: #e7e7e7dc;
+            }
+
+            /* Customizing Month and year title */
+            .react-datepicker__current-month,
+            .react-datepicker__current-year {
+                color: #e7e7e7;
+            }
+
+            /* Customizing the days of the month */
+            .react-datepicker__month-dropdown,
+            .react-datepicker__year-dropdown {
+                background-color: #333;
+                color: white;
+            }
+
+            /* Customizing hover state */
+            .react-datepicker__day:hover {
+                border-radius: 50%;
+                background-color: lightgrey;
+            }
+
+            /* Customizing the arrows */
+            .react-datepicker__navigation--previous,
+            .react-datepicker__navigation--next {
+                top: 12px;
+                border-color: white;
+            }
+
+            .calendar {
+                border: 1px solid rgb(209, 209, 209);
+                padding: 3px 5px;
+                border-radius: 5px;
+                font-size: 15px;
+                letter-spacing: 1px;
+                position: relative;
+                top: -40px;
+                left: 25px;
+                :focus {
+                    outline: none;
+                }
+            }
+        }
     }
 
     .searched-flights-container {
@@ -47,49 +281,85 @@
                 height: 300px;
                 background-color: #ffffff;
                 border-radius: 10px;
-                border-bottom: 1px solid rgba(71, 71, 71, 0.411);
+                border-bottom: 1px solid $search-box-border-color;
 
                 .carrier-info {
                     width: 100%;
-                    height: 60px;
+                    height: 70px;
                     display: flex;
                     flex-direction: row;
                     border-bottom: 1px solid rgba(71, 71, 71, 0.185);
-                    
+
                     .each-carrier {
                         display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
+                        flex-direction: column;
+                        align-items: start;
                         padding: 20px;
-                        gap: 8px;
+                        row-gap: 0px;
 
-                        .carrier-name {
-                            font-size: 20px;
-                            font-family: 'Roboto', sans-serif;
-                            font-weight: 500;
-                            color: #272727;
-                        }
-    
-                        .carrier-logo {
-                            width: 30px;
-                            height: 30px;
-                            border-radius: 50%;
-                            background-color: #ffffff;
+
+                        .carrier-company {
                             display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            overflow: hidden;
-    
-                            /* Hide anything that goes outside the circle */
-                            img {
+                            flex-direction: row;
+                            align-items: flex-start;
+                            gap: 8px;
+
+                            .carrier-name {
+                                font-size: 20px;
+                                font-family: 'Roboto', sans-serif;
+                                font-weight: 500;
+                                color: #272727;
+                            }
+
+                            .carrier-logo {
                                 width: 30px;
                                 height: 30px;
-                                object-fit: cover;
+                                border-radius: 50%;
+                                background-color: #ffffff;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                overflow: hidden;
+
+                                /* Hide anything that goes outside the circle */
+                                img {
+                                    width: 30px;
+                                    height: 30px;
+                                    object-fit: cover;
+                                }
                             }
                         }
-                    }            
+
+                        .carrier-model {
+                            font-size: 10px;
+                            font-family: 'Roboto', sans-serif;
+                            font-weight: 500;
+                            margin-left: 33px;
+                            margin-top: -8px;
+                            color: $carrier-model-color;
+                            padding: 2px 5px;
+                            border-radius: 50px;
+                            //border: 1px solid $carrier-model-color;
+                        }
+                    }
                 }
             }
         }
     }
+}
+
+.passengerAndClassDropdown {
+    position: absolute;
+    width: 400px;
+    height: max-content;
+    padding-bottom: 15px;
+    left: 0;
+    top: 90px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 200px;
+    border-radius: 15px;
 }
