@@ -147,11 +147,19 @@ export const useSearchInputs = () => {
         navigate(`/search?${queryParams}`);
     };
     return {
+
+        setFromData,
+        setToData,
+        setPassengerAndClass,
+        setDepartureDate,
+        setReturnDate,
+        
         fromData,
         toData,
         departureDate,
         returnDate,
         passengerAndClass,
+
         radioValue,
         getCurrentDate,
         handleSelect,
@@ -160,7 +168,8 @@ export const useSearchInputs = () => {
         onSwap,
         searchClicked, 
         handleRadioChange,
-        fromCountry,
+        
+        /*fromCountry,
         fromCity,
         fromAirport,
         fromAirportCode,
@@ -168,13 +177,16 @@ export const useSearchInputs = () => {
         toCity,
         toAirport,
         toAirportCode,
+
         departureDateExact,
         returnDateExact,
+        
         departureDay,
         returnDay,
+
         returnDate,
         passengerCount,
-        classType,
+        classType,*/
         radioValue, 
         formatDate
     };

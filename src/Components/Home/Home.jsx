@@ -26,7 +26,6 @@ const Home = () => {
         onSwap, 
         searchClicked, 
     } = useSearchInputs();
-
     
     
     return (

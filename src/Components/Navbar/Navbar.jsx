@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="logoDiv">
           <Link to="/" className="logo flex">
             <h1 className={logoClass}>
-              <SiYourtraveldottv  /> A-1 Travel and Tours
+              <SiYourtraveldottv  /> A-1 TRAVEL AND TOURS
             </h1>
           </Link>
         </div>

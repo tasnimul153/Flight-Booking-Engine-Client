@@ -13,12 +13,12 @@ export const useFlightSearch = (
 ) => {
   const [flightOffers, setFlightOffers] = useState([]);
   const [searchParams, setSearchParams] = useState({
-    originLocationCode: origin || "SYD",
-    destinationLocationCode: destination || "BKK",
-    departureDate: departureDateTime || "2023-12-10",
+    originLocationCode: "SYD",
+    destinationLocationCode: "BKK",
+    departureDate: "2023-12-10",
     // Uncomment the next line if you wish to include returnDate in your request
     // returnDate: returnDateTime,
-    adults: passengerCount || 1,
+    adults:  1,
     // Uncomment the next line if you wish to include travelClass in your request
     // travelClass: classType,
     nonStop: false,
@@ -40,8 +40,8 @@ export const useFlightSearch = (
               },
             }
           );
-          console.log(response.data.data);
-          setFlightOffers(response.data.data);
+          console.log(response.data);
+          setFlightOffers(response.data);
         }
       } catch (error) {
         console.error('Error fetching flight offers:', error);
