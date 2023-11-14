@@ -23,6 +23,7 @@ const NearestAirports = (AccessToken) => {
                         }
                     );
                     setNearestAirport(response.data.data);
+                    console.log("Nearest Airports: ", response.data.data);
                 }
             } catch (error) {
                 console.error('Error fetching nearest airports:', error);

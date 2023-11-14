@@ -27,7 +27,6 @@ const Home = () => {
         searchClicked, 
     } = useSearchInputs();
     
-    
     return (
         <>
             <section className='home'>

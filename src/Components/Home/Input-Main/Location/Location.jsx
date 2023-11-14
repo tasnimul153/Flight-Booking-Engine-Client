@@ -24,8 +24,8 @@ const Location = ({ tag, location, airport, airportCode, onSelect }) => {
         };
         getTokenFromBackend();
     }, []);
-
-    const nearestAirport = NearestAirports(accessToken);
+    
+    const nearestAirports = NearestAirports(accessToken);
 
     useEffect(() => {
         const handleOutsideClick = (event) => {
@@ -101,7 +101,7 @@ const Location = ({ tag, location, airport, airportCode, onSelect }) => {
                     <AiOutlineSearch className="icon" id='searchIcon' />
                     <input type="text" className='search' value={searchText} onChange={handleSearch} />
                 </div>
-                {nearestAirport.map((item) => (
+                {nearestAirports.map((item) => (
                     <DropdownLocation
                         key={item.iataCode + item.relevance}
                         city={item.address.cityName}
